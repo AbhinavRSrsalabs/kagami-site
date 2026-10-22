@@ -1,0 +1,335 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>KAGAMI — Technology, AI &amp; Cybersecurity Intelligence</title>
+<meta name="description" content="One destination for technology intelligence, artificial intelligence, cybersecurity and the signals shaping tomorrow.">
+<meta name="theme-color" content="#05070D">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700;800&family=Share+Tech+Mono&family=Space+Grotesk:wght@400;500;700&display=swap">
+<style>
+:root{--bg:#05070D;--bg2:#0B0F18;--el:#101725;--bl:#246BFD;--cy:#00E5FF;--vi:#9B5CFF;--tx:#F3F6FC;--mu:#A9B5CA;--rd:#FF405C;--am:#FFBF47;--ac:#9B5CFF;--d:"Orbitron","Segoe UI",sans-serif;--b:"Space Grotesk",system-ui,sans-serif;--m:"Share Tech Mono",ui-monospace,monospace;color-scheme:dark;box-sizing:border-box;padding-bottom:env(safe-area-inset-bottom,0px)}
+*,*::before,*::after{box-sizing:inherit;margin:0}
+html{scroll-behavior:smooth;scroll-padding-top:110px;overflow-x:clip}
+body{background:var(--bg);color:var(--tx);font:400 16px/1.5 var(--b);overflow-x:clip;padding-bottom:88px}
+body::before{content:"";position:fixed;inset:0;z-index:-1;background:radial-gradient(60% 40% at 85% 0,rgba(155,92,255,.2),transparent),radial-gradient(50% 35% at 0 45%,rgba(36,107,253,.15),transparent),linear-gradient(90deg,rgba(0,229,255,.03) 1px,transparent 1px) 0 0/44px 100%}
+a{color:inherit;text-decoration:none}button,input{font:inherit;color:inherit}
+:focus-visible{outline:2px solid var(--cy);outline-offset:2px}
+.ic{width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;flex:none}
+.w{max-width:1200px;margin:0 auto;padding:0 16px}
+.cut{--c:12px;position:relative;isolation:isolate;clip-path:polygon(var(--c) 0,100% 0,100% calc(100% - var(--c)),calc(100% - var(--c)) 100%,0 100%,0 var(--c));background:linear-gradient(135deg,var(--ac),rgba(36,107,253,.35) 60%,var(--ac))}
+.cut::before{content:"";position:absolute;inset:1px;z-index:-1;clip-path:inherit;background:var(--fill,var(--bg2))}
+/* header */
+.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:30;background:rgba(5,7,13,.92);border-bottom:1px solid rgba(36,107,253,.35)}
+@supports(backdrop-filter:blur(1px)){.top{background:rgba(5,7,13,.62);backdrop-filter:blur(14px)}}
+.r1{display:flex;align-items:center;padding-top:6px}
+.logo{font:800 1.75rem/1 var(--d);letter-spacing:.07em;margin-right:auto;padding:6px 0}
+.logo b{background:linear-gradient(135deg,var(--vi),var(--cy));-webkit-background-clip:text;background-clip:text;color:transparent}
+.ib{display:grid;place-items:center;width:44px;height:44px;border:0;background:none;color:var(--cy);cursor:pointer}
+.sub{display:flex;font:.72rem var(--m);letter-spacing:.14em;color:var(--mu);padding-bottom:8px;overflow-x:auto;scrollbar-width:none}
+.sub a{padding:4px 0;white-space:nowrap}.sub a+a::before{content:"/";margin:0 .7em;color:var(--bl)}
+.dn{display:none;gap:2px;margin-right:12px}
+.dn a{padding:10px 12px;font-size:.9rem;color:var(--mu);border-bottom:2px solid transparent;transition:color .2s,border-color .2s}
+.dn a:hover,.dn a[data-on]{color:var(--tx);border-color:var(--cy)}
+/* hero */
+.hw{overflow:hidden}
+.hero{position:relative;min-height:610px;padding-top:34px;padding-bottom:16px}
+.glow{position:absolute;right:-32%;top:0;width:115%;height:100%;background:radial-gradient(closest-side at 55% 38%,rgba(155,92,255,.55),rgba(36,107,253,.2) 60%,transparent);transform:translate3d(0,calc(var(--sy,0)*.1px),0)}
+.art{position:absolute;right:-31%;top:6px;height:calc(100% - 24px);aspect-ratio:2/3;pointer-events:none;transform:translate3d(0,calc(var(--sy,0)*-.04px),0);-webkit-mask-image:linear-gradient(#000 78%,transparent);mask-image:linear-gradient(#000 78%,transparent)}
+.art img{display:block;width:100%;height:100%;filter:drop-shadow(0 0 22px rgba(155,92,255,.5)) drop-shadow(0 0 3px rgba(0,229,255,.5));animation:fl 7s ease-in-out infinite;will-change:transform}
+.cp{position:relative;z-index:2}
+.eb{font:.7rem var(--m);letter-spacing:.2em;color:var(--cy);margin-bottom:14px}
+h1{font:800 6.1vw/1.1 var(--d);letter-spacing:.02em;max-width:64%}
+h1 span{display:block;overflow:hidden}h1 i{display:block;font-style:normal;animation:up .9s cubic-bezier(.2,.7,.2,1) both}
+h1 span:nth-child(2) i{animation-delay:.12s}h1 span:nth-child(3) i{animation-delay:.24s}
+h1 span:nth-child(n+2){font-size:1.45em}
+h1 span:nth-child(n+2) i{background:linear-gradient(90deg,#b985ff,#4d8dff 70%,#2fe4ff);-webkit-background-clip:text;background-clip:text;color:transparent}
+.lead{max-width:64%;font-size:.95rem;color:#dfe6f5;margin:16px 0 20px}
+.bt{display:flex;flex-wrap:wrap;gap:10px}
+.btn{display:inline-flex;align-items:center;gap:8px;min-height:46px;padding:0 18px;border:0;cursor:pointer;font-weight:700;font-size:.9rem;--fill:rgba(5,7,13,.8);--ac:rgba(169,181,202,.5)}
+.pri{--c:10px;background:linear-gradient(90deg,var(--bl),var(--vi))}.pri::before{display:none}
+.btn:hover{filter:brightness(1.15)}
+.st{display:flex;align-items:center;gap:8px;font:.78rem var(--m);color:var(--mu)}
+.hero .st{margin-top:16px}
+.dot{width:8px;height:8px;border-radius:50%;background:var(--am);flex:none}
+.live .dot{background:#2EE59D;animation:pl 2.2s ease-in-out infinite}.load .dot{background:var(--cy)}.stale .dot{background:var(--am)}
+/* categories */
+.cats{display:flex;gap:8px;overflow-x:auto;padding:14px 16px;scrollbar-width:none;scroll-snap-type:x proximity}
+.cat{flex:0 0 auto;min-width:92px;min-height:80px;display:grid;justify-items:center;align-content:center;gap:6px;border:0;cursor:pointer;font:500 .76rem var(--b);scroll-snap-align:start;--fill:#080c17;transition:transform .2s}
+.cat[data-on]{--fill:#121a30;transform:translateY(-3px)}
+.cat .ic{color:var(--ac)}
+/* feed */
+.fh{display:flex;justify-content:space-between;align-items:center;gap:8px 14px;flex-wrap:wrap;margin:24px 0 12px}
+h2{font:700 1rem var(--d);letter-spacing:.14em}h2::before{content:"///";color:var(--vi);font-family:var(--m);margin-right:.6em}
+.tools{display:flex;gap:8px}
+.sr{flex:1;display:flex;align-items:center;gap:8px;padding:0 4px 0 12px;min-height:46px;--fill:var(--el);--ac:rgba(36,107,253,.6)}
+.sr:focus-within{--ac:var(--cy)}.sr input{flex:1;min-width:0;background:none;border:0;outline:0}
+.rf{width:46px;height:46px;border:0;color:var(--cy);cursor:pointer;--fill:var(--el);--ac:rgba(36,107,253,.6);display:grid;place-items:center}
+.spin .ic{animation:rot .9s linear infinite}
+#note{font-size:.85rem;color:var(--mu);margin:12px 0}#note:empty{display:none}
+#note.err{border-left:3px solid var(--am);padding:8px 12px;background:rgba(255,191,71,.07);color:#ffe3a6}
+#note button{margin-left:6px;background:none;border:0;color:var(--cy);text-decoration:underline;cursor:pointer}
+#out{display:grid;gap:12px}
+.ft{display:flex;flex-direction:column;justify-content:flex-end;min-height:280px;padding:18px;--fill:#080c17;--c:18px}
+.ft::after{content:"";position:absolute;inset:1px;z-index:-1;clip-path:inherit;background:linear-gradient(180deg,rgba(5,7,13,.05),rgba(5,7,13,.92) 85%),radial-gradient(80% 100% at 85% 0,var(--ac),transparent 70%),repeating-linear-gradient(0deg,rgba(0,229,255,.07) 0 1px,transparent 1px 22px)}
+.ft h3{font:700 1.3rem/1.25 var(--b);margin:6px 0 8px}
+.ft p{color:#cfd8ea;font-size:.92rem;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;margin-bottom:12px}
+.ls{display:grid;gap:8px;align-content:start}
+.row{display:grid;grid-template-columns:76px 1fr 22px;gap:12px;align-items:center;padding:10px 12px;--fill:var(--bg2);transition:transform .2s}
+a.row:hover,a.ft:hover{transform:translateX(3px)}
+.th{height:58px;display:grid;place-items:center;color:#fff;background:radial-gradient(circle at 30% 20%,var(--ac),#0b0f18 85%);clip-path:polygon(8px 0,100% 0,100% calc(100% - 8px),calc(100% - 8px) 100%,0 100%,0 8px)}
+.rt{font-weight:500;line-height:1.3;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.mt{font:.72rem var(--m);color:var(--mu);margin-top:3px}
+.chip{display:inline-block;align-self:flex-start;font:.64rem var(--m);letter-spacing:.08em;padding:1px 7px;margin-bottom:4px;border:1px solid var(--ac);background:rgba(0,0,0,.4);margin-right:4px}
+.chip.demo{border-color:var(--am);color:var(--am)}
+.sk{min-height:78px;--fill:var(--el)}.sk::after{content:"";position:absolute;inset:0;background:linear-gradient(100deg,transparent 30%,rgba(0,229,255,.1),transparent 70%);animation:sh 1.3s linear infinite}
+.more{margin:14px auto 0;display:flex}
+.empty{padding:28px 12px;text-align:center;color:var(--mu)}
+/* characters */
+.gal{margin-top:40px;--ac:var(--vi)}
+.strip{display:flex;gap:12px;list-style:none;overflow-x:auto;scroll-snap-type:x mandatory;padding:8px 16px 14px;scrollbar-width:none}
+.chw{flex:0 0 56vw;max-width:250px;scroll-snap-align:center;opacity:0}
+.in .chw{animation:rise .7s cubic-bezier(.2,.7,.2,1) both;animation-delay:calc(var(--i)*80ms)}
+.ch{display:block;width:100%;padding:1px;border:0;cursor:pointer;--fill:#080c17;--c:16px;transition:transform .25s}
+.ch img{display:block;width:100%;height:auto;aspect-ratio:397/639;object-fit:cover}
+.ch .cn{display:block;padding:8px 6px 9px;font:700 .8rem var(--b);text-align:left;background:#080c17}
+.ch[aria-pressed=true]{transform:translateY(-5px);background:linear-gradient(135deg,var(--ac),#fff,var(--ac),var(--bl));background-size:300% 100%;animation:bd 4s linear infinite}
+.cap{font:.8rem var(--m);color:var(--mu);margin-top:4px}
+.dis{margin:36px auto 0;padding:16px;font-size:.84rem;color:var(--mu);border-top:1px solid rgba(36,107,253,.3)}
+.dis b{color:var(--tx)}
+/* bottom nav + menu */
+.bn{position:fixed;left:0;right:0;bottom:0;z-index:30;display:grid;grid-template-columns:repeat(5,1fr);align-items:center;padding:6px 8px calc(6px + env(safe-area-inset-bottom,0px));background:rgba(5,7,13,.94);border-top:1px solid rgba(36,107,253,.4)}
+@supports(backdrop-filter:blur(1px)){.bn{background:rgba(5,7,13,.66);backdrop-filter:blur(16px)}}
+.bn button{display:grid;justify-items:center;gap:2px;min-height:52px;background:none;border:0;color:var(--mu);font-size:.72rem;cursor:pointer}
+.bn [data-on]{color:var(--cy)}
+.bn .mid{width:56px;height:56px;margin:-24px auto 0;border-radius:50%;border:1px solid var(--vi);background:radial-gradient(#24104a,#0b0f18);color:var(--vi);min-height:0;display:grid;place-items:center}
+#menu{position:fixed;inset:0;z-index:40;background:rgba(5,7,13,.97);padding:calc(14px + env(safe-area-inset-top,0px)) 22px 22px;overflow-y:auto;visibility:hidden;opacity:0;transform:translateY(-14px);transition:opacity .25s,transform .25s,visibility 0s .25s}
+#menu.open{visibility:visible;opacity:1;transform:none;transition-delay:0s}
+#menu a{display:block;font:700 1.25rem var(--d);padding:14px 0;border-bottom:1px solid rgba(36,107,253,.25)}
+#menu .ib{margin-left:auto}
+@keyframes up{from{transform:translateY(110%)}}@keyframes fl{50%{transform:translate3d(0,-9px,0)}}@keyframes pl{50%{opacity:.35}}
+@keyframes rot{to{transform:rotate(360deg)}}@keyframes sh{from{transform:translateX(-100%)}to{transform:translateX(100%)}}
+@keyframes rise{from{opacity:0;transform:translateY(22px)}to{opacity:1}}@keyframes bd{to{background-position:300% 0}}
+@media(min-width:600px){.w{padding:0 24px}.cats{padding-left:24px}.strip{padding-left:24px}}
+@media(min-width:900px){
+body{padding-bottom:0}.bn,.sub{display:none}.dn{display:flex}.r1{padding-top:0}.logo{font-size:1.9rem}
+.hero{min-height:700px;padding-top:70px}.glow{right:-6%;width:70%}.art{right:2%}
+h1{font-size:3.5rem;max-width:560px}.lead{max-width:480px;font-size:1.05rem}
+#out{grid-template-columns:1.15fr 1fr}.ft{min-height:420px}
+.cats{justify-content:center;padding:18px 0}.cat{min-width:120px}
+.strip{display:grid;grid-template-columns:repeat(6,1fr);overflow:visible;padding:8px 0 14px}.chw{max-width:none;flex:none;min-width:0}
+}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}.chw{opacity:1}}
+
+/* ===== v2: cinematic layer (effects only; v1 rules above untouched) ===== */
+button,a,.ch{-webkit-tap-highlight-color:transparent;touch-action:manipulation}
+.sub a{padding:11px 0}.btn{min-height:48px}.strip,.cats{overscroll-behavior-x:contain}
+#fx{position:fixed;left:0;top:0;z-index:-1;pointer-events:none}
+.gfx{position:fixed;left:0;right:0;top:-44px;bottom:0;z-index:-1;pointer-events:none;background:linear-gradient(rgba(0,229,255,.05) 1px,transparent 1px) 0 0/100% 44px;-webkit-mask-image:linear-gradient(transparent,#000 60%,transparent);mask-image:linear-gradient(transparent,#000 60%,transparent);animation:gm 5s linear infinite;will-change:transform}
+.cut{background:linear-gradient(110deg,var(--ac),rgba(36,107,253,.35) 25%,var(--ac) 50%,rgba(36,107,253,.35) 75%,var(--ac)) 0 0/200% 100%}
+.pri{background:linear-gradient(110deg,var(--bl),var(--vi) 50%,var(--bl)) 0 0/200% 100%}
+.cut:active,.cut:focus-visible,.cat[data-on],.sr:focus-within{animation:bd 3s linear infinite}
+@media(hover:hover){.cut:hover{animation:bd 3s linear infinite}.btn:hover{transform:translateY(-1px)}}
+.btn,.cat,.rf,.ib{transition:transform .2s,filter .2s}
+.btn:active,.cat:active,.rf:active,.ib:active{transform:scale(.95)}
+.ch{transform:perspective(700px) rotateX(calc(var(--ry,0)*-10deg)) rotateY(calc(var(--rx,0)*12deg)) translateY(var(--ty,0px))}
+.ch[aria-pressed=true]{--ty:-5px;transform:perspective(700px) rotateX(calc(var(--ry,0)*-10deg)) rotateY(calc(var(--rx,0)*12deg)) translateY(var(--ty));background:linear-gradient(110deg,var(--ac),#fff 25%,var(--ac) 50%,var(--bl) 75%,var(--ac)) 0 0/200% 100%;animation:bd 4s linear infinite}
+.art{transform:translate3d(calc(var(--px,0)*-16px),calc(var(--sy,0)*-.04px + var(--py,0)*-9px),0);animation:ia 1.5s cubic-bezier(.2,.7,.2,1) backwards}
+.glow{transform:translate3d(calc(var(--px,0)*22px),calc(var(--sy,0)*.1px + var(--py,0)*12px),0);animation:ig 1.8s ease backwards}
+@media(hover:hover) and (min-width:900px){.art,.glow{transition:transform .4s ease-out}}
+.eb,.lead,.bt,.hero .st{animation:fu .8s cubic-bezier(.2,.7,.2,1) backwards}
+.eb{animation-delay:.3s}.lead{animation-delay:.55s}.bt{animation-delay:.7s}.hero .st{animation-delay:.85s}
+.scan{position:absolute;left:0;right:0;top:0;height:2px;z-index:1;pointer-events:none;background:linear-gradient(90deg,transparent,var(--cy),transparent);animation:sc 1.7s .3s ease-out both}
+h1 i{position:relative}
+h1 i::before,h1 i::after{content:attr(data-t);position:absolute;left:0;top:0;opacity:0;pointer-events:none}
+h1 i::before{-webkit-text-fill-color:var(--cy)}h1 i::after{-webkit-text-fill-color:var(--rd)}
+.gl i::before{animation:g1 .45s steps(1) both}.gl i::after{animation:g2 .45s steps(1) both}
+.rv{opacity:0}.rv.vis{opacity:1;animation:fu .6s cubic-bezier(.2,.7,.2,1) var(--d,0s) backwards}
+dialog{background:rgba(5,7,13,.97);color:var(--tx);border:1px solid rgba(0,229,255,.4);padding:12px;width:min(92vw,440px);max-height:94svh;overflow:auto;margin:auto}
+dialog[open]{animation:fu .35s ease backwards}dialog::backdrop{background:rgba(2,3,8,.82)}
+#vi{display:block;width:100%;height:auto;max-height:66svh;object-fit:contain;aspect-ratio:397/639}
+.lite .art img,.lite .glow,.lite .art{animation:none}.lite .gfx,.lite .scan{display:none}
+@keyframes fl{50%{transform:translate3d(0,-9px,0) rotate(.35deg)}}
+@keyframes bd{to{background-position:200% 0}}
+@keyframes fu{from{opacity:0;transform:translateY(16px)}}
+@keyframes ia{from{opacity:0;transform:translate3d(36px,0,0) scale(1.06)}}@keyframes ig{from{opacity:0}}
+@keyframes sc{0%{opacity:.8;transform:translateY(0)}100%{opacity:0;transform:translateY(660px)}}
+@keyframes gm{to{transform:translateY(44px)}}
+@keyframes g1{0%{opacity:.85;transform:translateX(-3px);clip-path:inset(10% 0 60% 0)}33%{opacity:.85;transform:translateX(3px);clip-path:inset(55% 0 15% 0)}66%{opacity:.85;transform:translateX(-2px);clip-path:inset(30% 0 40% 0)}100%{opacity:0}}
+@keyframes g2{0%{opacity:.7;transform:translateX(3px);clip-path:inset(60% 0 10% 0)}33%{opacity:.7;transform:translateX(-3px);clip-path:inset(15% 0 55% 0)}66%{opacity:.7;transform:translateX(2px);clip-path:inset(40% 0 30% 0)}100%{opacity:0}}
+@media(prefers-reduced-motion:reduce){.rv{opacity:1}.gfx,.scan{display:none}}
+</style></head><body>
+<canvas id="fx" aria-hidden="true"></canvas><div class="gfx" aria-hidden="true"></div>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+<symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></symbol>
+<symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"/></symbol>
+<symbol id="i-x" viewBox="0 0 24 24"><path d="M18 6 6 18M6 6l12 12"/></symbol>
+<symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14m-7-7 7 7-7 7"/></symbol>
+<symbol id="i-refresh" viewBox="0 0 24 24"><path d="M3 12a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 8"/><path d="M21 3v5h-5"/><path d="M21 12a9 9 0 0 1-9 9 9.75 9.75 0 0 1-6.74-2.74L3 16"/><path d="M8 16H3v5"/></symbol>
+<symbol id="i-home" viewBox="0 0 24 24"><path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8"/><path d="M3 10a2 2 0 0 1 .709-1.528l7-5.999a2 2 0 0 1 2.582 0l7 5.999A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></symbol>
+<symbol id="i-list" viewBox="0 0 24 24"><path d="M3 12h.01M3 18h.01M3 6h.01M8 12h13M8 18h13M8 6h13"/></symbol>
+<symbol id="i-cpu" viewBox="0 0 24 24"><rect width="16" height="16" x="4" y="4" rx="2"/><rect width="6" height="6" x="9" y="9" rx="1"/><path d="M15 2v2M15 20v2M2 15h2M2 9h2M20 15h2M20 9h2M9 2v2M9 20v2"/></symbol>
+<symbol id="i-shield" viewBox="0 0 24 24"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/></symbol>
+<symbol id="i-phone" viewBox="0 0 24 24"><rect width="14" height="20" x="5" y="2" rx="2"/><path d="M12 18h.01"/></symbol>
+<symbol id="i-zap" viewBox="0 0 24 24"><path d="M4 14a1 1 0 0 1-.78-1.63l9.9-10.2a.5.5 0 0 1 .86.46l-1.92 6.02A1 1 0 0 0 13 10h7a1 1 0 0 1 .78 1.63l-9.9 10.2a.5.5 0 0 1-.86-.46l1.92-6.02A1 1 0 0 0 11 14z"/></symbol>
+<symbol id="i-atom" viewBox="0 0 24 24"><circle cx="12" cy="12" r="1"/><path d="M20.2 20.2c2.04-2.03.02-7.36-4.5-11.9-4.54-4.52-9.87-6.54-11.9-4.5-2.04 2.03-.02 7.36 4.5 11.9 4.54 4.52 9.87 6.54 11.9 4.5Z"/><path d="M15.7 15.7c4.52-4.54 6.54-9.87 4.5-11.9-2.03-2.04-7.36-.02-11.9 4.5-4.52 4.54-6.54 9.87-4.5 11.9 2.03 2.04 7.36.02 11.9-4.5Z"/></symbol>
+<symbol id="i-alert" viewBox="0 0 24 24"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3"/><path d="M12 9v4M12 17h.01"/></symbol>
+</defs></svg>
+
+<header class="top"><div class="w">
+ <div class="r1"><a class="logo" href="#top" data-go="home" aria-label="KAGAMI home"><b>K</b>AGAMI</a>
+  <nav class="dn" aria-label="Primary"><a href="#feed" data-go="latest">Latest</a><a href="#feed" data-go="ai">AI</a><a href="#feed" data-go="cyber">Cybersecurity</a><a href="#feed" data-go="gadgets">Gadgets</a><a href="#feed" data-go="research">Research</a><a href="#feed" data-go="official">Official Alerts</a></nav>
+  <button class="ib" data-go="search" aria-label="Search stories"><svg class="ic"><use href="#i-search"/></svg></button>
+  <button class="ib" id="mb" aria-label="Open menu" aria-expanded="false"><svg class="ic"><use href="#i-menu"/></svg></button></div>
+ <nav class="sub" aria-label="Quick categories"><a href="#feed" data-go="tech">TECH</a><a href="#feed" data-go="ai">AI</a><a href="#feed" data-go="cyber">CYBERSECURITY</a><a href="#feed" data-go="gadgets">GADGETS</a></nav>
+</div></header>
+
+<div id="menu" aria-label="Menu"><button class="ib" id="mc" aria-label="Close menu"><svg class="ic"><use href="#i-x"/></svg></button>
+ <a href="#top" data-go="home">Home</a><a href="#feed" data-go="latest">Latest</a><a href="#feed" data-go="ai">AI</a><a href="#feed" data-go="cyber">Cybersecurity</a><a href="#feed" data-go="gadgets">Gadgets</a><a href="#feed" data-go="research">Research</a><a href="#feed" data-go="official">Official Alerts</a><a href="#feed" data-go="search">Search</a><a href="#chars">Characters</a></div>
+
+<main id="top">
+<section class="hw"><div class="hero w">
+ <div class="glow" aria-hidden="true"></div><div class="scan" aria-hidden="true"></div>
+ <div class="art"><img src="assets/characters/kagami-hero.webp" width="800" height="1200" fetchpriority="high" decoding="async" alt="Cyberpunk heroine with violet hair, a glowing pink visor and crystal rabbit-ear antennae"></div>
+ <div class="cp">
+  <p class="eb">GLOBAL TECH INTELLIGENCE</p>
+  <h1><span><i>BEYOND THE</i></span><span><i>DIGITAL</i></span><span><i>EDGE.</i></span></h1>
+  <p class="lead">One destination for technology intelligence, artificial intelligence, cybersecurity, and the signals shaping tomorrow.</p>
+  <div class="bt"><a class="btn pri cut" href="#feed" data-go="latest">Explore latest news <svg class="ic"><use href="#i-arrow"/></svg></a><a class="btn cut" href="#cats" data-go="cats">View categories</a></div>
+  <div class="st" id="st0" role="status"><i class="dot"></i><span>Connecting to sources…</span></div>
+ </div></div></section>
+
+<nav class="cats w" id="cats" aria-label="Categories"></nav>
+
+<section class="w" id="feed" aria-labelledby="fh">
+ <div class="fh"><h2 id="fh">LATEST INTELLIGENCE</h2><div class="st" id="st"><i class="dot"></i><span>Loading…</span></div></div>
+ <div class="tools"><label class="sr cut"><svg class="ic"><use href="#i-search"/></svg><input id="q" type="search" placeholder="Search title, source or category" aria-label="Search stories" autocomplete="off"><button class="ib" id="qc" hidden aria-label="Clear search"><svg class="ic"><use href="#i-x"/></svg></button></label>
+  <button class="rf cut" id="rf" aria-label="Refresh feed"><svg class="ic"><use href="#i-refresh"/></svg></button></div>
+ <div id="note" role="status"></div>
+ <div id="out" aria-live="polite"></div>
+ <button class="btn cut more" id="more" hidden>Show more stories</button>
+</section>
+
+<section class="gal" id="chars" aria-labelledby="gh"><div class="w"><h2 id="gh">THE KAGAMI CAST</h2><p class="cap" id="cap">Tap a character to select. Original artwork supplied by the KAGAMI project owner.</p></div>
+ <ul class="strip w" id="strip"></ul></section>
+
+<p class="dis w"><b>Editorial note.</b> KAGAMI aggregates headlines and short summaries from independent publishers and public agencies, and links to the original source for every story. It is not a government security authority. “Official Alerts” lists only items issued by public agencies, such as CISA (United States) or the UK NCSC.</p>
+</main>
+
+<nav class="bn" aria-label="Mobile">
+ <button data-go="home"><svg class="ic"><use href="#i-home"/></svg>Home</button>
+ <button data-go="latest"><svg class="ic"><use href="#i-list"/></svg>Latest</button>
+ <button class="mid" id="rf2" aria-label="Refresh feed"><svg class="ic"><use href="#i-refresh"/></svg></button>
+ <button data-go="search"><svg class="ic"><use href="#i-search"/></svg>Search</button>
+ <button id="more2"><svg class="ic"><use href="#i-menu"/></svg>More</button>
+</nav>
+<dialog id="vw" aria-label="Character viewer"><button class="ib" id="vx" aria-label="Close viewer" style="margin-left:auto"><svg class="ic"><use href="#i-x"/></svg></button><img id="vi" alt="" width="397" height="639"><p id="vn" class="cap" style="text-align:center"></p><div class="bt" style="justify-content:center;margin-top:10px"><button class="btn cut" id="vp">Previous</button><button class="btn cut" id="vnx">Next</button></div></dialog>
+<noscript><p class="w dis">KAGAMI needs JavaScript to load the live feed.</p></noscript>
+
+<script>/*PREVIEW_IMGS*/</script>
+<script>
+const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];
+const CFG={url:'/api/feed',every:9e5,timeout:12e3,page:9};
+const CATS={all:['Latest','list','#9B5CFF','latest'],ai:['AI','cpu','#9B5CFF'],cyber:['Cybersecurity','shield','#00E5FF'],gadgets:['Gadgets','phone','#246BFD'],tech:['Tech','zap','#7B6CFF'],research:['Research','atom','#5C9DFF'],official:['Official Alerts','alert','#FF405C']};
+const CHARS=[['neon-rabbit','Neon Rabbit','#ff3df0'],['blind-vision','Blind Vision','#FF405C'],['midnight-echo','Midnight Echo','#246BFD'],['frost-reaper','Frost Reaper','#5cc8ff'],['luna-code','Luna Code','#9B5CFF'],['shadow-drifter','Shadow Drifter','#FF405C']];
+/* DEMO CONTENT — layout preview only. Never shown as news; remove by emptying this array. */
+const DEMO=[
+{cat:'cyber',title:'Sample story: how a security advisory will appear here',summary:'Layout preview only. Real headlines, sources and original links appear once the live feed is connected.'},
+{cat:'ai',title:'Sample story: how an AI model release will appear here'},
+{cat:'gadgets',title:'Sample story: how a hardware or device story will appear here'},
+{cat:'tech',title:'Sample story: how a general technology story will appear here'},
+{cat:'research',title:'Sample story: how a science or research story will appear here'}].map(i=>({...i,source:'Demo content',demo:1,summary:i.summary||'Demo content. Not a real story.'}));
+const A=id=>(window.PV&&PV[id])||'assets/characters/'+id+'.webp';
+const h=(t,c,x)=>{const e=document.createElement(t);if(c)e.className=c;if(x!=null)e.textContent=x;return e};
+const ic=n=>{const s=document.createElementNS('http://www.w3.org/2000/svg','svg');s.setAttribute('class','ic');s.setAttribute('aria-hidden','true');const u=document.createElementNS('http://www.w3.org/2000/svg','use');u.setAttribute('href','#i-'+n);s.append(u);return s};
+const safe=s=>{try{const u=new URL(s);return /^https?:$/.test(u.protocol)?u.href:null}catch{return null}};
+const ago=t=>{const m=Math.round((Date.now()-t)/6e4);return m<1?'just now':m<60?m+' min ago':m<1440?Math.round(m/60)+' h ago':Math.round(m/1440)+' d ago'};
+const S={items:[],demo:true,cat:'all',q:'',n:CFG.page,ok:null,src:[],busy:0};
+function norm(i){const url=safe(i&&i.url);if(!url||!i.title)return null;const d=Date.parse(i.date);
+ return{title:String(i.title).slice(0,200),url,source:String(i.source||'Unknown').slice(0,60),cat:CATS[i.cat]?i.cat:'tech',date:isNaN(d)?null:d,summary:String(i.summary||'').slice(0,240),official:!!i.official}}
+const view=()=>{const q=S.q.toLowerCase();return S.items.filter(i=>(S.cat==='all'||(S.cat==='official'?i.official:i.cat===S.cat))&&(!q||[i.title,i.summary,i.source,CATS[i.cat][0]].join(' ').toLowerCase().includes(q))).sort((a,b)=>(b.date||0)-(a.date||0))};
+function meta(i){const m=h('div','mt');m.textContent=i.source+(i.date?' · '+ago(i.date):i.demo?' · demo':'');if(i.date)m.title=new Date(i.date).toLocaleString();return m}
+function chips(i){const f=document.createDocumentFragment();f.append(h('span','chip',(i.official?'OFFICIAL · ':'')+CATS[i.cat][0].toUpperCase()));if(i.demo)f.append(h('span','chip demo','DEMO'));return f}
+function story(i,feat){const el=h(i.demo?'div':'a',feat?'ft cut':'row cut');rv(el);el.style.setProperty('--ac',CATS[i.cat][2]);
+ if(!i.demo){el.href=i.url;el.target='_blank';el.rel='noopener noreferrer';el.setAttribute('aria-label',i.title+' — '+i.source+' (opens original source)')}
+ if(feat){el.append(chips(i),h('h3',0,i.title),h('p',0,i.summary),meta(i));return el}
+ const th=h('div','th');th.append(ic(CATS[i.cat][1]));const b=h('div');b.append(chips(i),h('div','rt',i.title),meta(i));el.append(th,b,i.demo?h('span'):ic('arrow'));return el}
+function render(){
+ const v=view(),out=$('#out');out.replaceChildren();RI=0;
+ $$('[data-go]').forEach(b=>{const k=b.dataset.go;b.toggleAttribute('data-on',k===(S.cat==='all'?'latest':S.cat))});
+ const nt=$('#note');if(S.cat==='official'&&!S.demo)nt.textContent='Official Alerts shows items issued by public agencies. KAGAMI is not a government security authority.';
+ if(!v.length){out.append(h('p','empty',S.demo&&S.cat==='official'?'Official alerts appear only when the live feed is connected.':'No stories match. Clear the search or pick another category.'));$('#more').hidden=true;return}
+ out.append(story(v[0],1));const ls=h('div','ls');v.slice(1,S.n).forEach(i=>ls.append(story(i)));out.append(ls);$('#more').hidden=v.length<=S.n}
+function skel(){const o=$('#out');o.replaceChildren();for(let i=0;i<4;i++)o.append(h('div','row cut sk'))}
+function status(m,t){['#st','#st0'].forEach(s=>{const e=$(s);e.className='st '+m;e.lastChild.textContent=t})}
+async function load(){
+ if(S.busy)return;S.busy=1;$$('#rf,#rf2').forEach(b=>b.classList.add('spin'));status('load','Connecting to sources…');if(!S.items.length||S.demo){skel();S.anim=1}else S.anim=0;
+ const ac=new AbortController(),tm=setTimeout(()=>ac.abort(),CFG.timeout),nt=$('#note');nt.className='';nt.textContent='';
+ try{const r=await fetch(CFG.url,{signal:ac.signal,headers:{accept:'application/json'}});if(!r.ok)throw Error('HTTP '+r.status);
+  const j=await r.json(),items=(j.items||[]).map(norm).filter(Boolean);if(!items.length)throw Error('no stories returned');
+  S.items=items;S.demo=false;S.ok=new Date(j.fetchedAt||Date.now());S.src=j.sources||[];
+  const up=S.src.filter(s=>s.ok).length;status('live','Live feed · retrieved '+S.ok.toLocaleTimeString([],{hour:'2-digit',minute:'2-digit'})+(S.src.length?' · '+up+'/'+S.src.length+' sources':''));
+  if(S.src.length&&up<S.src.length){nt.className='err';nt.textContent='Some sources did not respond: '+S.src.filter(s=>!s.ok).map(s=>s.name).join(', ')+'.'}
+ }catch(e){
+  if(!S.demo){status('stale','Refresh failed · showing stories retrieved '+S.ok.toLocaleTimeString([],{hour:'2-digit',minute:'2-digit'}))}
+  else{S.items=DEMO;status('stale','Preview mode · live feed not connected');nt.className='err';nt.append('Couldn’t reach the live feed ('+e.message+'). The stories below are demo content, not news. Deploy the included /api/feed function to enable live stories.');const b=h('button',0,'Try again');b.onclick=load;nt.append(b)}
+ }finally{clearTimeout(tm);S.busy=0;$$('#rf,#rf2').forEach(b=>b.classList.remove('spin'));render()}}
+function go(k){const m=$('#menu');m.classList.remove('open');$('#mb').setAttribute('aria-expanded','false');
+ if(k==='home')return scrollTo({top:0});if(k==='cats')return $('#cats').scrollIntoView();
+ if(k==='search'){$('#feed').scrollIntoView();return setTimeout(()=>$('#q').focus({preventScroll:true}),350)}
+ S.cat=k==='latest'?'all':k;S.n=CFG.page;S.anim=1;render();$('#feed').scrollIntoView()}
+document.addEventListener('click',e=>{const b=e.target.closest('[data-go]');if(b){e.preventDefault();go(b.dataset.go)}});
+$('#cats').append(...Object.entries(CATS).map(([k,c])=>{const b=h('button','cat cut');b.dataset.go=c[3]||k;b.style.setProperty('--ac',c[2]);b.append(ic(c[1]),h('span',0,c[0]));return b}));
+$('#q').oninput=e=>{S.q=e.target.value.trim();S.n=CFG.page;S.anim=0;$('#qc').hidden=!S.q;render()};
+$('#qc').onclick=()=>{$('#q').value='';S.q='';S.anim=0;$('#qc').hidden=true;render();$('#q').focus()};
+$('#more').onclick=()=>{S.n+=CFG.page;S.anim=0;render()};$('#rf').onclick=$('#rf2').onclick=load;
+const openM=()=>{$('#menu').classList.add('open');$('#mb').setAttribute('aria-expanded','true');$('#mc').focus()},closeM=()=>{$('#menu').classList.remove('open');$('#mb').setAttribute('aria-expanded','false');$('#mb').focus()};
+$('#mb').onclick=$('#more2').onclick=openM;$('#mc').onclick=closeM;addEventListener('keydown',e=>{if(e.key==='Escape'&&$('#menu').classList.contains('open'))closeM()});
+/* characters */
+const strip=$('#strip');CHARS.forEach(([id,n,c],i)=>{const li=h('li','chw');li.style.setProperty('--i',i);const b=h('button','ch cut');b.style.setProperty('--ac',c);b.setAttribute('aria-pressed','false');
+ const im=new Image();im.src=A(id);im.alt=n+' — cyberpunk character artwork';im.width=397;im.height=639;im.loading='lazy';im.decoding='async';b.append(im,h('span','cn',String(i+1).padStart(2,'0')+'  '+n));
+ b.onclick=()=>b.getAttribute('aria-pressed')==='true'?open_(i):pick(i);li.append(b);strip.append(li)});
+if('IntersectionObserver'in window){const o=new IntersectionObserver(([e])=>{if(e.isIntersecting){$('#chars').classList.add('in');o.disconnect()}},{threshold:.15});o.observe($('#chars'))}else $('#chars').classList.add('in');
+/* parallax: scroll only, rAF-throttled, off when reduced motion */
+if(!matchMedia('(prefers-reduced-motion:reduce)').matches){let t=0;addEventListener('scroll',()=>{if(t)return;t=requestAnimationFrame(()=>{t=0;document.documentElement.style.setProperty('--sy',Math.min(scrollY,700))})},{passive:true})}
+/* ===== v2 effects: reveals, background, parallax, glitch, character viewer ===== */
+const R=matchMedia('(prefers-reduced-motion:reduce)').matches,root=document.documentElement,rnd=(a,b)=>a+Math.random()*(b-a);
+S.anim=1;let RI=0;
+const IOr='IntersectionObserver'in window&&new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('vis');IOr.unobserve(e.target)}}),{threshold:.1,rootMargin:'0px 0px -5% 0px'});
+const rv=el=>{if(!IOr||!S.anim||R)return;el.classList.add('rv');el.style.setProperty('--d',Math.min(RI++,8)*60+'ms');IOr.observe(el)};
+$$('.fh,.tools,.cats,.dis').forEach(rv);RI=0;
+/* ambient canvas: particles + light streaks. 30fps cap, DPR<=1.5, pauses when hidden, lite mode on low battery/save-data/weak device */
+(()=>{const cv=$('#fx'),cx=cv.getContext('2d'),C=['0,229,255','155,92,255','36,107,253'];let W=0,H=0,P=[],K=[],lite=false,raf=0,last=0;
+const seed=()=>{const n=Math.round(Math.min(W/14,52)*(lite?.4:1));P=Array.from({length:n},()=>({x:rnd(0,W),y:rnd(0,H),r:rnd(.6,1.8),v:rnd(.08,.3),c:C[Math.random()*3|0],a:rnd(.25,.8),t:rnd(0,6.3)}));K=lite||R?[]:Array.from({length:3},()=>({x:rnd(-W,W),y:rnd(0,H),l:rnd(120,260),v:rnd(2.2,4),c:C[Math.random()*2|0]}))};
+const size=()=>{const d=Math.min(devicePixelRatio||1,1.5);W=innerWidth;H=innerHeight;cv.width=W*d;cv.height=H*d;cv.style.width=W+'px';cv.style.height=H+'px';cx.setTransform(d,0,0,d,0,0);seed()};
+const draw=ts=>{raf=0;if(document.hidden)return;if(ts-last<(lite?66:33)){raf=requestAnimationFrame(draw);return}last=ts;cx.clearRect(0,0,W,H);
+ for(const p of P){p.y-=p.v;p.t+=.02;if(p.y<-4){p.y=H+4;p.x=rnd(0,W)}cx.fillStyle='rgba('+p.c+','+(p.a*(.6+.4*Math.sin(p.t))).toFixed(2)+')';cx.beginPath();cx.arc(p.x+Math.sin(p.t)*6,p.y,p.r,0,6.283);cx.fill()}
+ for(const k of K){k.x+=k.v;k.y-=k.v*.36;if(k.x>W+k.l||k.y<-30){k.x=-k.l-rnd(0,W*.6);k.y=rnd(H*.3,H+60)}const x0=k.x-k.l,y0=k.y+k.l*.36,g=cx.createLinearGradient(x0,y0,k.x,k.y);g.addColorStop(0,'rgba('+k.c+',0)');g.addColorStop(1,'rgba('+k.c+',.4)');cx.strokeStyle=g;cx.lineWidth=1.2;cx.beginPath();cx.moveTo(x0,y0);cx.lineTo(k.x,k.y);cx.stroke()}
+ if(!R)raf=requestAnimationFrame(draw)};
+const run=()=>{if(!raf&&!R&&!document.hidden)raf=requestAnimationFrame(draw)};
+const setLite=v=>{lite=v;root.classList.toggle('lite',v);seed()};
+const weak=!!(navigator.connection&&navigator.connection.saveData)||navigator.deviceMemory<=2||navigator.hardwareConcurrency<=3;
+size();if(weak)setLite(true);if(R)draw(1e9);else run();
+addEventListener('resize',()=>{if(innerWidth!==W||innerHeight>H){clearTimeout(window.__rz);window.__rz=setTimeout(size,200)}});
+document.addEventListener('visibilitychange',run);
+if(navigator.getBattery)navigator.getBattery().then(b=>{const f=()=>setLite(weak||(b.level<.2&&!b.charging));b.addEventListener('levelchange',f);b.addEventListener('chargingchange',f);f()}).catch(()=>{});
+})();
+/* desktop hero parallax (pointer) */
+const hero=$('.hero');
+if(!R&&matchMedia('(hover:hover) and (min-width:900px)').matches){let t=0;hero.addEventListener('pointermove',e=>{if(t||root.classList.contains('lite'))return;t=requestAnimationFrame(()=>{t=0;const r=hero.getBoundingClientRect();hero.style.setProperty('--px',((e.clientX-r.left)/r.width-.5).toFixed(2));hero.style.setProperty('--py',((e.clientY-r.top)/r.height-.5).toFixed(2))})});hero.addEventListener('pointerleave',()=>{hero.style.setProperty('--px',0);hero.style.setProperty('--py',0)})}
+/* occasional brief title glitch */
+$$('h1 i').forEach(i=>i.dataset.t=i.textContent);
+if(!R)(function gl(){setTimeout(()=>{const t=$('h1');if(!document.hidden&&!root.classList.contains('lite')&&scrollY<420){t.classList.add('gl');setTimeout(()=>t.classList.remove('gl'),480)}gl()},rnd(7000,12000))})();
+/* character cards: mouse tilt, select, tap-again viewer with prev/next/swipe */
+$$('.ch').forEach(b=>{b.addEventListener('pointermove',e=>{if(e.pointerType!=='mouse'||root.classList.contains('lite'))return;const r=b.getBoundingClientRect();b.style.setProperty('--rx',((e.clientX-r.left)/r.width-.5).toFixed(2));b.style.setProperty('--ry',((e.clientY-r.top)/r.height-.5).toFixed(2))});b.addEventListener('pointerleave',()=>{b.style.removeProperty('--rx');b.style.removeProperty('--ry')})});
+function pick(i){const n=CHARS[i][1],c=CHARS[i][2];$$('.ch').forEach((x,k)=>x.setAttribute('aria-pressed',k===i));$('#chars').style.setProperty('--ac',c);$('#cap').textContent='Selected: '+n+'. Tap again to enlarge. Display name only, no official lore.'}
+const vw=$('#vw');let vi=0,sx=0;
+function show(i){vi=(i+CHARS.length)%CHARS.length;const c=CHARS[vi];$('#vi').src=A(c[0]);$('#vi').alt=c[1]+' — cyberpunk character artwork';$('#vn').textContent=String(vi+1).padStart(2,'0')+'  '+c[1];pick(vi)}
+function open_(i){show(i);if(vw.showModal)vw.showModal();else vw.setAttribute('open','')}
+$('#vx').onclick=()=>vw.close();$('#vp').onclick=()=>show(vi-1);$('#vnx').onclick=()=>show(vi+1);
+vw.addEventListener('click',e=>{if(e.target===vw)vw.close()});
+vw.addEventListener('keydown',e=>{if(e.key==='ArrowRight')show(vi+1);if(e.key==='ArrowLeft')show(vi-1)});
+vw.addEventListener('touchstart',e=>{sx=e.touches[0].clientX},{passive:true});
+vw.addEventListener('touchend',e=>{const d=e.changedTouches[0].clientX-sx;if(Math.abs(d)>50)show(vi+(d<0?1:-1))},{passive:true});
+setInterval(()=>{if(!document.hidden)load()},CFG.every);
+load();
+</script></body></html>
